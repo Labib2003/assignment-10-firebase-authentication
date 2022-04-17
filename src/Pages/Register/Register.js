@@ -9,20 +9,17 @@ const Register = () => {
     const passwordRef = useRef('');
     const confirmPasswordRef = useRef('');
 
-    const [errorMessage, setErrorMessage] = useState('');
-
     const [
         createUserWithEmailAndPassword,
         user,
         error,
-    ] = useCreateUserWithEmailAndPassword(auth);
+    ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
     const [updateProfile] = useUpdateProfile(auth);
 
     const navigate = useNavigate();
 
     const handleRegister = async (event) => {
         event.preventDefault();
-
         const name = nameRef.current.value;
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
@@ -30,20 +27,15 @@ const Register = () => {
 
         if (password === confirmPassword) {
             await createUserWithEmailAndPassword(email, password);
-            await updateProfile({displayName: name});
+            await updateProfile({ displayName: name });
         }
         else {
-            setErrorMessage("Password did not match");
-            console.log('pass err');
-        }
+            alert("Password did not match");
+        };
     };
 
     if(user){
-        navigate('/');
-    };
-
-    if (error) {
-        setErrorMessage(error.message);
+        navigate('/home');
     };
 
     return (
@@ -74,7 +66,7 @@ const Register = () => {
                     type="password"
                     placeholder='Confirm Password'
                     required />
-                <p className='text-xl font-semibold text-red-500 my-3'>{errorMessage}</p>
+                <p className='text-xl font-semibold text-red-500 my-3'>{error ? error.message : ''}</p>
                 <input
                     className='bg-orange-400 hover:bg-orange-500 text-xl w-1/2 p-3 rounded-md'
                     type="submit"

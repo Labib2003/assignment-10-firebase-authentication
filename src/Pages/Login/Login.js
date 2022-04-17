@@ -1,13 +1,12 @@
 import React, { useRef, useState } from 'react';
 import auth from '../../firebase.init';
-import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth'
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth'
 import { Link, useNavigate } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
 
 const Login = () => {
     const emailRef = useRef('');
     const passwordRef = useRef('');
-
-    const [errorMessage, setErrorMessage] = useState('');
 
     const [signInWithGoogle, googleUser] = useSignInWithGoogle(auth);
     const [
@@ -15,6 +14,7 @@ const Login = () => {
         user,
         error,
     ] = useSignInWithEmailAndPassword(auth);
+    const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
 
     const navigate = useNavigate();
 
@@ -25,14 +25,16 @@ const Login = () => {
         const password = passwordRef.current.value;
 
         signInWithEmailAndPassword(email, password);
+    };
+
+    const handlePassReset = async () => {
+        const email = emailRef.current.value;
+        await sendPasswordResetEmail(email);
+        toast('Please check your mail!');
     }
 
     if (user || googleUser) {
-        navigate('/');
-    }
-
-    if (error) {
-        setErrorMessage(error.message);
+        navigate('/home');
     }
 
     return (
@@ -53,16 +55,18 @@ const Login = () => {
                     name=""
                     placeholder='Password'
                     required />
-                <p className='text-xl font-semibold text-red-500 my-3'>{errorMessage}</p>
+                <p className='text-xl font-semibold text-red-500 my-3'>{error ? error.message : ''}</p>
                 <input
                     className='bg-orange-400 hover:bg-orange-500 text-xl w-1/2 p-3 rounded-md'
                     type="submit"
                     value="Login" />
+                <p className='text-xl my-3'>Forgot password? <span onClick={handlePassReset} className='text-orange-400 hover:text-orange-500 cursor-pointer font-semibold'>Get password reset email.</span></p>
             </form>
             <button
                 onClick={() => signInWithGoogle()}
-                className='bg-orange-400 hover:bg-orange-500 text-xl w-1/2 my-3 p-3 rounded-md'>Continue with Google</button>
-            <p className='text-xl'>New to Guitar tutor? <Link className='text-orange-400 hover:text-orange-600 font-semibold' to='/register'>Create an Account!</Link></p>
+                className='bg-orange-400 hover:bg-orange-500 text-xl w-1/2 p-3 rounded-md'>Continue with Google</button>
+            <p className='text-xl my-3'>New to Guitar tutor? <Link className='text-orange-400 hover:text-orange-600 font-semibold' to='/register'>Create an Account!</Link></p>
+           <p className='text-xl font-semibold'><ToastContainer/></p>
         </div>
     );
 };
