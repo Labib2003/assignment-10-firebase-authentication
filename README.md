@@ -1,5 +1,5 @@
 # Assignment 10
-## Independent Service Provider Website
+## Guitar Tutor
 For this assignment I made a website for a individual guitar teacher who teaches through online video call lessons.
 
 ## [Live site](https://guitar-tutor-assignment.web.app/)
