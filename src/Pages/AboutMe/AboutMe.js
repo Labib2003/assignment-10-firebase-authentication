@@ -3,14 +3,14 @@ import React from 'react';
 const AboutMe = () => {
     return (
         <div className='w-4/5 mx-auto'>
-            <div className='flex justify-around my-5'>
-                <div className='text-left w-1/2 my-auto'>
+            <div className='flex flex-col-reverse md:flex-row justify-around my-5'>
+                <div className='text-left w-full md:w-1/2 my-auto'>
                     <h1 className='text-5xl font-semibold mb-5'>Labib Amir Salimi</h1>
                     <p className='text-3xl'>Student and beginner <span className='font-semibold'>web developer</span></p>
                 </div>
                 <div>
                     <img
-                        className='w-80 rounded-full border-4 border-orange-400 shadow-md shadow-gray-500'
+                        className='w-80 mx-auto rounded-full border-4 border-orange-400 shadow-md shadow-gray-500 mb-3 md:mb-0'
                         src="images/me.jpg"
                         alt="me!" />
                 </div>

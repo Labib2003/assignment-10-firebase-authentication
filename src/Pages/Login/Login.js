@@ -31,7 +31,8 @@ const Login = () => {
 
     const handlePassReset = async () => {
         const email = emailRef.current.value;
-        await sendPasswordResetEmail(email);
+        await sendPasswordResetEmail(email)
+                .catch(error => console.log(error))
         toast('Please check your mail!');
 
     }
@@ -40,40 +41,34 @@ const Login = () => {
         navigate(from, { replace: true });
     }
 
-    let errorElement;
-
-    if(error){
-        errorElement = <p>Wrong email or password</p>
-    }
-
     return (
-        <div className='w-4/5 mx-auto my-5'>
+        <div className='w-full md:w-4/5 mx-auto my-5'>
             <h3 className='text-3xl font-semibold'>Login</h3>
             <form onSubmit={handleLogin}>
                 <input
                     ref={emailRef}
-                    className='block w-1/2 mx-auto text-xl p-3 border border-gray-400 my-3 rounded-md'
+                    className='block w-4/5 lg:w-1/2 mx-auto text-xl p-3 border border-gray-400 my-3 rounded-md'
                     type="email"
                     name=""
                     placeholder='Email'
                     required />
                 <input
                     ref={passwordRef}
-                    className='block w-1/2 mx-auto text-xl p-3 border border-gray-400 my-3 rounded-md'
+                    className='block w-4/5 lg:w-1/2 mx-auto text-xl p-3 border border-gray-400 my-3 rounded-md'
                     type="password"
                     name=""
                     placeholder='Password'
                     required />
                 <input
-                    className='bg-orange-400 hover:bg-orange-500 text-xl w-1/2 p-3 rounded-md'
+                    className='bg-orange-400 hover:bg-orange-500 text-xl w-4/5 lg:w-1/2 p-3 rounded-md'
                     type="submit"
                     value="Login" />
                 <p className='text-xl my-3'>Forgot password? <span onClick={handlePassReset} className='text-orange-400 hover:text-orange-500 cursor-pointer font-semibold'>Get password reset email.</span></p>
             </form>
-            {errorElement}
+            <p>{error ? error.message : ''}</p>
             <button
                 onClick={() => signInWithGoogle()}
-                className='bg-orange-400 hover:bg-orange-500 text-xl w-1/2 p-3 rounded-md'>Continue with Google</button>
+                className='bg-orange-400 hover:bg-orange-500 text-xl w-4/5 lg:w-1/2 p-3 rounded-md'>Continue with Google</button>
             <p className='text-xl my-3'>New to Guitar tutor? <Link className='text-orange-400 hover:text-orange-600 font-semibold' to='/register'>Create an Account!</Link></p>
             <div className='text-xl font-semibold'><ToastContainer /></div>
         </div>

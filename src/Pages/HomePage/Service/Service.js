@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 const Service = ({ service }) => {
     const { img, name, desc, price } = service;
     return (
-        <div className='flex border border-gray-300 p-3 rounded-md'>
-            <div className='w-1/3 mr-5'>
-                <img className='rounded-md' src={img} alt="" />
+        <div className='flex flex-col md:flex-row border border-gray-300 p-3 rounded-md'>
+            <div className='md:w-1/3 md:mr-5'>
+                <img className='rounded-md w-full mx-auto md:mx-0 ' src={img} alt="" />
             </div>
             <div className='text-left w-4/5'>
                 <h3 className='text-3xl font-semibold'>{name}</h3>
