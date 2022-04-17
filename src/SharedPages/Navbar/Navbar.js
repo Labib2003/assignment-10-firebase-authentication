@@ -17,7 +17,7 @@ const Navbar = () => {
                 <Link to='/'>Guitar tutor</Link>
                 <div className='w-1/4 flex justify-between'>
                     <p>Blogs</p>
-                    <p>About me</p>
+                    <Link to='/about'>About me</Link>
                     {
                         user ?
                             <p onClick={handleSignOut} className='cursor-pointer'>Sign Out</p>

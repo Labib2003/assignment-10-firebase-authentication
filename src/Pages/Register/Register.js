@@ -14,11 +14,10 @@ const Register = () => {
     const [
         createUserWithEmailAndPassword,
         user,
-        loading,
         error,
     ] = useCreateUserWithEmailAndPassword(auth);
     const [updateProfile] = useUpdateProfile(auth);
-    
+
     const navigate = useNavigate();
 
     const handleRegister = async (event) => {
@@ -41,7 +40,10 @@ const Register = () => {
 
     if(user){
         navigate('/');
-        console.log(user);
+    };
+
+    if (error) {
+        setErrorMessage(error.message);
     };
 
     return (
