@@ -1,12 +1,14 @@
 [
     {
         "id": 1,
+        "img": "images/tabs.jpg",
         "name": "Arrange Tabs",
         "desc": "Want to play your favorite song but cant find the tabs? I will translate any song to sheet tabs so that you can play them.",
         "price": 50
     },
     {
         "id": 2,
+        "img": "images/beginner-course.jpg",
         "name": "Beginners course on guitar",
         "desc": "A simple 3 week course to get you started with guitar playing. Covering all the basics from strumming to simple scales and chords.",
         "price": 100
@@ -14,6 +16,7 @@
     {
         "id": 3,
         "name": "Advanced guitarist course",
+        "img": "images/advanced-course.jpg",
         "desc": "An advanced electric guitar course aimed at experienced players who want to take guitar playing seriously and break in the music industry.",
         "price": 300
     }
