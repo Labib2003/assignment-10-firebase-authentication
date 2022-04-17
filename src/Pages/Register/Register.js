@@ -8,7 +8,9 @@ const Register = () => {
     const emailRef = useRef('');
     const passwordRef = useRef('');
     const confirmPasswordRef = useRef('');
+
     const [errorMessage, setErrorMessage] = useState('');
+
     const [
         createUserWithEmailAndPassword,
         user,
@@ -16,9 +18,10 @@ const Register = () => {
         error,
     ] = useCreateUserWithEmailAndPassword(auth);
     const [updateProfile] = useUpdateProfile(auth);
+    
     const navigate = useNavigate();
 
-    const handleFormSubmit = async (event) => {
+    const handleRegister = async (event) => {
         event.preventDefault();
 
         const name = nameRef.current.value;
@@ -44,7 +47,7 @@ const Register = () => {
     return (
         <div className='w-4/5 mx-auto my-5'>
             <h3 className='text-3xl font-semibold'>Create New Account</h3>
-            <form onSubmit={handleFormSubmit}>
+            <form onSubmit={handleRegister}>
                 <input
                     ref={nameRef}
                     className='block w-1/2 mx-auto text-xl p-3 border border-gray-400 my-3 rounded-md'
