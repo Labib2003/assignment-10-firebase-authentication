@@ -14,7 +14,7 @@ import Navbar from './SharedPages/Navbar/Navbar';
 function App() {
   return (
     <div className="App">
-      <div className='sticky top-0 z-10'>
+      <div className='sticky top-0 z-20'>
         <Navbar></Navbar>
       </div>
       <Routes>

@@ -19,5 +19,12 @@
         "img": "images/advanced-course.jpg",
         "desc": "An advanced electric guitar course aimed at experienced players who want to take guitar playing seriously and break in the music industry.",
         "price": 300
+    },
+    {
+        "id": 4,
+        "name": "Ghost guitarist",
+        "img": "images/ghost.jpg",
+        "desc": "If you are looking for someone to take care of the guitar playing for your next song, I can be the perfect fit for your job.",
+        "price": 500
     }
 ]
