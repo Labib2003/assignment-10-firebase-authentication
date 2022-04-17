@@ -1,0 +1,17 @@
+[
+    {
+        "id": 1,
+        "Q": "Difference between authorization and authentication",
+        "ans": "Authorization determines what data or resource the user is allowed to access or in other words, what data or resource the user have authority to access. Authentication identifies an user to provide the above mentioned access to the system"
+    },
+    {
+        "id":2,
+        "Q": "Why are you using firebase? What other options do you have to implement authentication?",
+        "ans": "I am using firebase because large tech companies like Google definitely has a better system to handle and protect user authentication information. That is why it is more secure in general to use a service like firebase to handle user data because if we do that ourselves, the lack of good technology will make us vulnerable to hackers and other cyber criminals. There are alternative options out there to implement authentication, like for example, Auth0, Passport, MongoDB, Okta etc."
+    },
+    {
+        "id": 3,
+        "Q": "What other services does firebase provide other than authentication",
+        "ans": "Firebase provide many other features other than authentication. For example, hosting, google analytics, cloud storage, dynamic links etc."
+    }
+]

@@ -16,7 +16,7 @@ const Navbar = () => {
             <div className='w-4/5 mx-auto py-3 flex justify-between text-xl font-semibold'>
                 <Link to='/'>Guitar tutor</Link>
                 <div className='w-1/4 flex justify-between'>
-                    <p>Blogs</p>
+                    <Link to='/blogs'>Blogs</Link>
                     <Link to='/about'>About me</Link>
                     {
                         user ?
