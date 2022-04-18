@@ -20,9 +20,9 @@ Here are the main features of this project
 * The page is hosted in firebase
 
 I have used the following technologies/frameworks to build this project.
-1. React
-2. React Tailwind
-3. React Router
-4. Firebase
-5. React firebase hooks
-6. React toastify
+* React
+* React Tailwind
+* React Router
+* Firebase
+* React firebase hooks
+* React bootstrap

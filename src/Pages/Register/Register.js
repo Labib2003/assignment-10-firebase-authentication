@@ -73,7 +73,7 @@ const Register = () => {
                     type="submit"
                     value="Register" />
             </form>
-            <p className='text-xl my-3'>Already have an account? <Link className='text-orange-400 hover:text-orange-600 font-semibold' to='/login'>Login!</Link></p>
+            <p className='text-xl my-3'>Already have an account? <Link className='text-orange-600 hover:text-orange-700 font-semibold' to='/login'>Login!</Link></p>
         </div>
     );
 };

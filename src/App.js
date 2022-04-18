@@ -9,13 +9,13 @@ import PageNotFound from './Pages/PageNotFound';
 import Register from './Pages/Register/Register';
 import RequireAuth from './RequireAuth/RequireAuth';
 import Footer from './SharedPages/Footer/Footer';
-import Navbar from './SharedPages/Navbar/Navbar';
+import NavBar from './SharedPages/NavBar/NavBar';
 
 function App() {
   return (
     <div className="App">
       <div className='sticky top-0 z-20'>
-        <Navbar></Navbar>
+        <NavBar></NavBar>
       </div>
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>

@@ -8,7 +8,7 @@ const Service = ({ service }) => {
             <div className='md:w-1/3 md:mr-5'>
                 <img className='rounded-md w-full mx-auto md:mx-0 ' src={img} alt="" />
             </div>
-            <div className='text-left w-4/5'>
+            <div className='text-left w-full md:w-4/5'>
                 <h3 className='text-3xl font-semibold'>{name}</h3>
                 <p className='text-xl my-3 leading-relaxed'>{desc}</p>
                 <div className='flex w-full justify-between'>

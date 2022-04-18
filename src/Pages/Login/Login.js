@@ -68,13 +68,13 @@ const Login = () => {
                     className='bg-orange-400 hover:bg-orange-500 text-xl w-4/5 lg:w-1/2 p-3 rounded-md'
                     type="submit"
                     value="Login" />
-                <p className='text-xl my-3'>Forgot password? <span onClick={handlePassReset} className='text-orange-400 hover:text-orange-500 cursor-pointer font-semibold'>Get password reset email.</span></p>
+                <p className='text-xl my-3'>Forgot password? <span onClick={handlePassReset} className='text-orange-600 hover:text-orange-700 cursor-pointer font-semibold'>Get password reset email.</span></p>
             </form>
             <p className='text-xl text-red-500 font-semibold my-3'>{error || googleError ? `${error?.message} ${googleError?.message}` : ''}</p>
             <button
                 onClick={() => signInWithGoogle()}
                 className='bg-orange-400 hover:bg-orange-500 text-xl w-4/5 lg:w-1/2 p-3 rounded-md'>Continue with Google</button>
-            <p className='text-xl my-3'>New to Guitar tutor? <Link className='text-orange-400 hover:text-orange-600 font-semibold' to='/register'>Create an Account!</Link></p>
+            <p className='text-xl my-3'>New to Guitar tutor? <Link className='text-orange-600 hover:text-orange-700 font-semibold' to='/register'>Create an Account!</Link></p>
             </div>
             <Toast className='text-right' show={showToast} onClose={toggleToast}>
                 <Toast.Header>
