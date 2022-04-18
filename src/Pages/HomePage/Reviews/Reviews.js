@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Review from '../Review/Review';
 
 const Reviews = () => {
+    // getting data from the public folder and setting them in a state
     const [reviews, setReviews] = useState([]);
     useEffect(() => {
         fetch('reviews.json')

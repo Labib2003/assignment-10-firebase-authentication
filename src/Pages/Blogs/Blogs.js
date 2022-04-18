@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import Blog from '../../Blog/Blog';
+import Blog from '../Blog/Blog';
 
 const Blogs = () => {
+    // getting data from the public folder and setting them in a state
     const [blogs, setBlogs] = useState([]);
     useEffect(() => {
         fetch("blogs.json")

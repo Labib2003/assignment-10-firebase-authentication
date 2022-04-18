@@ -4,11 +4,13 @@ import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 
 const Register = () => {
+    // getting the input field values by using useRef
     const nameRef = useRef('');
     const emailRef = useRef('');
     const passwordRef = useRef('');
     const confirmPasswordRef = useRef('');
 
+    // react firebase hooks
     const [
         createUserWithEmailAndPassword,
         user,
@@ -17,8 +19,7 @@ const Register = () => {
     ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
     const [updateProfile] = useUpdateProfile(auth);
 
-    const navigate = useNavigate();
-
+    // creating new user with email and password and setting the display name
     const handleRegister = async (event) => {
         event.preventDefault();
         const name = nameRef.current.value;
@@ -35,6 +36,8 @@ const Register = () => {
         };
     };
 
+    // redirecting the user to home after the account is successfully created
+    const navigate = useNavigate();
     if(user){
         navigate('/home');
     };

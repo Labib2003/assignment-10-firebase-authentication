@@ -7,6 +7,7 @@ const RequireAuth = ({ children }) => {
     const [user, loading] = useAuthState(auth);
     const location = useLocation();
 
+    // added a loading element to make sure the user can access the child route after a page reload
     if (loading) {
         return (
             <div>

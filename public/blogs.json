@@ -2,7 +2,7 @@
     {
         "id": 1,
         "Q": "Difference between authorization and authentication",
-        "ans": "Authorization determines what data or resource the user is allowed to access or in other words, what data or resource the user have authority to access. Authentication identifies an user to provide the above mentioned access to the system"
+        "ans": "Authorization determines what data or resource the user is allowed to access or in other words, what data or resource the user have authority to access. Authentication identifies an user to provide the above mentioned access to the system."
     },
     {
         "id":2,
