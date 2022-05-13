@@ -5,11 +5,11 @@ import Blogs from './Pages/Blogs/Blogs';
 import Checkout from './Pages/Checkout/Checkout';
 import Home from './Pages/HomePage/Home/Home';
 import Login from './Pages/Login/Login';
-import PageNotFound from './Pages/PageNotFound';
 import Register from './Pages/Register/Register';
-import RequireAuth from './RequireAuth/RequireAuth';
 import Footer from './SharedPages/Footer/Footer';
 import NavBar from './SharedPages/NavBar/NavBar';
+import PageNotFound from './SharedPages/PageNotFound';
+import RequireAuth from './SharedPages/RequireAuth/RequireAuth';
 
 function App() {
   return (

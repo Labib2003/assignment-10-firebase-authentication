@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import BookingModal from '../../../SharedPages/Footer/BookingModal';
 
 const Service = ({ service }) => {
     const { img, name, desc, price } = service;
@@ -13,9 +14,10 @@ const Service = ({ service }) => {
                 <p className='text-xl my-3 leading-relaxed'>{desc}</p>
                 <div className='flex w-full justify-between'>
                     <h2 className='text-2xl font-semibold h-full my-auto'>${price}</h2>
-                    <Link to='/checkout' className='text-xl text-orange-500 hover:text-orange-600 font-semibold underline px-3 py-1 rounded-md'>Book this!</Link>
+                    <label for="booking-modal" className="text-xl text-orange-500 hover:text-orange-600 font-semibold underline px-3 py-1 rounded-md">Book this!</label>
                 </div>
             </div>
+            <BookingModal></BookingModal>
         </div>
     );
 };
