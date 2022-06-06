@@ -14,10 +14,9 @@ const Service = ({ service }) => {
                 <p className='text-xl my-3 leading-relaxed'>{desc}</p>
                 <div className='flex w-full justify-between'>
                     <h2 className='text-2xl font-semibold h-full my-auto'>${price}</h2>
-                    <label for="booking-modal" className="text-xl text-orange-500 hover:text-orange-600 font-semibold underline px-3 py-1 rounded-md">Book this!</label>
+                    <Link to='/checkout' className="text-xl text-orange-500 hover:text-orange-600 font-semibold underline px-3 py-1 rounded-md">Book this!</Link>
                 </div>
             </div>
-            <BookingModal></BookingModal>
         </div>
     );
 };
