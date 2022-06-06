@@ -2,15 +2,19 @@ import React from 'react';
 
 const Banner = () => {
     return (
-        <div className='relative'>
-            <div className='absolute bottom-5 md:bottom-20 lg:bottom-32 z-10 w-full text-white'>
-                <h1 className='text-xl md:text-5xl font-bold'>Your personal guitar coach</h1>
-                <h3 className='text-3xl font-semibold mt-3 hidden md:block'>Ready to guide you to the magical world of music.</h3>
+        <div class="hero" style={{  
+            backgroundImage: `url("images/banner.jpg")`,
+            backgroundPosition: 'center',
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat'
+          }}>
+            <div class="hero-overlay bg-black bg-opacity-25"></div>
+            <div class="hero-content text-center text-neutral-content">
+                <div class="max-w-2xl py-32">
+                    <h1 class="mb-5 text-5xl font-bold">Your personal guitar coach</h1>
+                    <p class="mb-5">Ready to guide you to the magical world of music.</p>
+                </div>
             </div>
-            <img
-                className='w-full'
-                src="images/banner.jpg"
-                alt="" />
         </div>
     );
 };
